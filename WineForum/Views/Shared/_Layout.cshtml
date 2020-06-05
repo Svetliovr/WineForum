@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<WineForum.Data.Models.ApplicationUser> UserManager
+@inject SignInManager<WineForum.Data.Models.ApplicationUser> SignInManager
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -13,28 +17,46 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </environment>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">WineForum</a>
+                <a class="navbar-brand navLogo" asp-controller="Home" asp-action="Index"></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-controller="Forum" asp-action="Index">Forums</a></li>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Settings<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Profile</li>
+                                <li><a asp-controller="Profile" asp-action="Detail" asp-route-id="@UserManager.GetUserId(User)">My Profile</a></li>
+                                <li><a asp-controller="Forum" asp-action="Create">Create Forum</a></li>
+                                <li><a asp-controller="Profile" asp-action="Index">View Users</a></li>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Admin</li>
+                                    <li><a asp-controller="Forum" asp-action="Create">Create Forum</a></li>
+
+                                }
+                            </ul>
+
+                        </li>
+                    }
                 </ul>
-                <partial name="_LoginPartial" />
+
+                @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
     </nav>
@@ -43,10 +65,7 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2020 - WineForum</p>
-        </footer>
+
     </div>
 
     <environment include="Development">
@@ -67,7 +86,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
         </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/site.mjs" asp-append-version="true"></script>
     </environment>
 
     @RenderSection("Scripts", required: false)
