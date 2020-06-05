@@ -40,13 +40,22 @@ namespace WineForum.Controllers
                  AuthorRating = post.User.Rating,
                  Created = post.Created,
                  PostContent = post.Content,
-                 Replies = replies
+                 Replies = replies,
+                 ForumId = post.Forum.Id,
+                 ForumName = post.Forum.Title,
+                 
              };
              
             return View(model);
         }
-        
-         public IActionResult Create(int id)
+
+        private bool IsAuthorAdmin(ApplicationUser user)
+        {
+            return _userManager.GetRolesAsync(user)
+               .Result.Contains("Admin");
+        }
+
+        public IActionResult Create(int id)
         {
             //Note Id is Forum.Id
 
@@ -101,6 +110,7 @@ namespace WineForum.Controllers
                 AuthorRating = reply.User.Rating,
                 Created = reply.Created,
                 ReplyContent = reply.Content,
+                
             });
         }
     }
