@@ -4,15 +4,62 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WineForum.Data;
+using WineForum.Data.Models;
 using WineForum.Models;
+using WineForum.Models.Forum;
+using WineForum.Models.Home;
+using WineForum.Models.Post;
 
 namespace WineForum.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IPost _postService;
+        
+
+        public HomeController(IPost postService)
+        {
+            _postService = postService;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var model = BuildHomeIndexModel();
+            return View(model);
+        }
+
+        private HomeIndexModel BuildHomeIndexModel()
+        {
+            var latestPosts = _postService.GetLatestPosts(10);
+
+            var posts = latestPosts.Select(post => new PostListingModel
+            {
+                Id = post.Id,
+                Title = post.Title,
+                AuthorName = post.User.UserName,
+                AuthorRating = post.User.Rating,
+                DatePosted = post.Created.ToString(),
+                RepliesCount = post.Replies.Count(),
+                Forum = GetForumListingForPost(post)
+                });
+            return new HomeIndexModel
+            {
+                LatestPosts = posts,
+                SearchQuery = ""
+            };
+        }
+
+        private ForumListingModel GetForumListingForPost(Post post)
+        {
+            var forum = post.Forum;
+            return new ForumListingModel
+            {
+                Id = forum.Id,
+                Name = forum.Title,
+                ImageUrl = forum.ImageUrl,
+            };
+           
         }
 
         public IActionResult About()
