@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WineForum.Data;
 using WineForum.Data.Models;
 using WineForum.Models.Forum;
 
@@ -28,10 +29,10 @@ namespace WineForum.Controllers
 
             var model = new ForumIndexModel
             {
-                ForumList=forums
-            }
+                ForumList = forums
+            };
 
-            return View();
+            return View(model);
         }
     }
 }

@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WineForum.Data\WineForum.Data.csproj" />
+    <ProjectReference Include="..\WineForum.Service\WineForum.Service.csproj" />
   </ItemGroup>
 
 </Project>

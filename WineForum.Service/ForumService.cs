@@ -3,6 +3,7 @@ using WineForum.Data;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using WineForum.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace WineForum.Service
 {
@@ -27,7 +28,7 @@ namespace WineForum.Service
 
         public IEnumerable<Forum> GetAll()
         {
-            return _context.Forums;
+            return _context.Forums.Include(forum=>forum.Posts);
         }
 
         public IEnumerable<ApplicationUser> GetAllActiveUsers(int id)
