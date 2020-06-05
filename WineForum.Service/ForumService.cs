@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using WineForum.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace WineForum.Service
 {
@@ -38,7 +39,15 @@ namespace WineForum.Service
 
         public Forum GetById(int id)
         {
-            throw new NotImplementedException();
+            var forum = _context.Forums.Where(f => f.Id == id)
+                 .Include(f => f.Posts)
+                 .ThenInclude(p => p.User)
+                 .Include(f => f.Posts)
+                 .ThenInclude(p => p.Replies)
+                 .ThenInclude(r => r.User)
+                 .FirstOrDefault();
+
+            return forum;
         }
 
         public bool HasRecentPost(int id)
