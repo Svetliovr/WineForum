@@ -21,4 +21,8 @@
     <ProjectReference Include="..\WineForum.Service\WineForum.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Identity\Services\" />
+  </ItemGroup>
+
 </Project>
