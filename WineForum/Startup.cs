@@ -36,6 +36,7 @@ namespace WineForum
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddScoped<IForum, ForumService>();
+            services.AddScoped<IPost, PostService>();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));

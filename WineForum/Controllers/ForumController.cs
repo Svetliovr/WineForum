@@ -15,8 +15,9 @@ namespace WineForum.Controllers
         private readonly IForum _forumService;
         private readonly IPost _postService;
 
-        public ForumController (IForum forumService)
+        public ForumController (IForum forumService,IPost postService)
         {
+            _postService = postService;
             _forumService = forumService;
         }
         public IActionResult Index()
@@ -46,7 +47,6 @@ namespace WineForum.Controllers
             var postListings = posts.Select(post => new PostListingModel
             {
                 Id = post.Id,
-
                 AuthorRating = post.User.Rating,
                 AuthorName = post.User.UserName,
                 Title = post.Title,
@@ -60,7 +60,7 @@ namespace WineForum.Controllers
                 Posts = postListings,
                 Forum = BuildForumListing(forum)
             };
-            return View();
+            return View(model);
         }
 
         private ForumListingModel BuildForumListing(Forum forum)
@@ -72,6 +72,7 @@ namespace WineForum.Controllers
                 Description = forum.Description,
                 ImageUrl = forum.ImageUrl
             };
+            
         }
 
         private ForumListingModel BuildForumListing(Post post)
