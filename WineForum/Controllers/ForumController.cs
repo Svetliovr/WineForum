@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using WineForum.Data;
 using WineForum.Data.Models;
 using WineForum.Models.Forum;
+using WineForum.Models.Post;
 
 namespace WineForum.Controllers
 {
@@ -41,9 +42,25 @@ namespace WineForum.Controllers
         {
             var forum = _forumService.GetById(id);
 
-            var post = _postService.GetFilteredPosts(id);
+            var posts = _postService.GetPostsByForum(id);
 
-            var postListings = 
+            var postListings = posts.Select(post => new PostListingModel
+            {
+                Id = post.Id,
+
+                AuthorRating = post.User.Rating,
+                AuthorName = post.User.UserName,
+                Title = post.Title,
+                DatePosted = post.Created.ToString(),
+                RepliesCount = post.Replies.Count(),
+                Forum = BuildForumListing(post)
+
+            });
+        }
+
+        private ForumListingModel BuildForumListing(object post)
+        {
+            throw new NotImplementedException();
         }
     }
 }

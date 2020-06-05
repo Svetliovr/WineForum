@@ -57,7 +57,7 @@ namespace WineForum.Service
         {
             return _context.Forums
                 .Where(forum => forum.Id == id).First()
-                .Posts();
+                .Posts;
         }
     }
 }
