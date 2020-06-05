@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,7 +46,12 @@ namespace WineForum.Service
 
         public Post GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Posts.Where(post => post.Id == id)
+               .Include(post => post.User)
+               .Include(post => post.Replies)
+                   .ThenInclude(reply => reply.User)
+               .Include(post => post.Forum)
+               .SingleOrDefault();
         }
 
         public IEnumerable<Post> GetFilteredPosts(string searchQuery)
