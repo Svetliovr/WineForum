@@ -26,6 +26,11 @@ namespace WineForum.Controllers
                    Description = forum.Description,
                });
 
+            var model = new ForumIndexModel
+            {
+                ForumList=forums
+            }
+
             return View();
         }
     }
