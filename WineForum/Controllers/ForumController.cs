@@ -41,8 +41,7 @@ namespace WineForum.Controllers
         public IActionResult Topic(int id)
         {
             var forum = _forumService.GetById(id);
-
-            var posts = _postService.GetPostsByForum(id);
+            var posts = forum.Posts;
 
             var postListings = posts.Select(post => new PostListingModel
             {
@@ -56,11 +55,30 @@ namespace WineForum.Controllers
                 Forum = BuildForumListing(post)
 
             });
+            var model = new ForumTopicModel
+            {
+                Posts = postListings,
+                Forum = BuildForumListing(forum)
+            };
+            return View();
         }
 
-        private ForumListingModel BuildForumListing(object post)
+        private ForumListingModel BuildForumListing(Forum forum)
         {
-            throw new NotImplementedException();
+            return new ForumListingModel
+            {
+                Id = forum.Id,
+                Name = forum.Title,
+                Description = forum.Description,
+                ImageUrl = forum.ImageUrl
+            };
+        }
+
+        private ForumListingModel BuildForumListing(Post post)
+        {
+            var forum = post.Forum;
+
+            return BuildForumListing(forum);
         }
     }
 }
