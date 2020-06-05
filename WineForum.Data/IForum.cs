@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using WineForum.Data.Models;
 
 namespace WineForum.Data
 {
-    public class IForum
+    public interface IForum
     {
         Forum GetById(int id);
         IEnumerable<Forum> GetAll();
@@ -13,7 +15,7 @@ namespace WineForum.Data
         Task Delete(int forumId);
         Task UpdateForumTitle(int forumId, string newTitle);
         Task UpdateForumDescription(int forumId, string newDescription);
-        IEnumerable<ApplicationUser> GetActiveUsers(int id);
+        IEnumerable<ApplicationUser> GetAllActiveUsers(int id);
         bool HasRecentPost(int id);
     }
 }
