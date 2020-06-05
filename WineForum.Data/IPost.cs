@@ -18,5 +18,6 @@ namespace WineForum.Data
         Task EditPostContent(int id, string newContent);
 
         Task AddReply(PostReply reply);
+        object GetPostsByForum(int id);
     }
 }
