@@ -65,6 +65,15 @@ namespace WineForum.Service
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Post> GetFilteredPosts(Forum forum, string searchQuery)
+        {
+            return string.IsNullOrEmpty(searchQuery)
+           ? forum.Posts
+           : forum.Posts
+           .Where(post => post.Title.Contains(searchQuery)
+               || post.Content.Contains(searchQuery));
+        }
+
         public IEnumerable<Post> GetLatestPosts(int n)
         {
             return GetAll().OrderByDescending(post => post.Created).Take(n);

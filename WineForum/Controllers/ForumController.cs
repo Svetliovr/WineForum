@@ -39,10 +39,12 @@ namespace WineForum.Controllers
         }
 
 
-        public IActionResult Topic(int id)
+        public IActionResult Topic(int id,string searchQuery)
         {
             var forum = _forumService.GetById(id);
-            var posts = forum.Posts;
+            var posts = new List<Post>();
+
+            posts = _postService.GetFilteredPosts(forum,searchQuery).ToList();
 
             var postListings = posts.Select(post => new PostListingModel
             {
@@ -61,6 +63,12 @@ namespace WineForum.Controllers
                 Forum = BuildForumListing(forum)
             };
             return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Search(int id, string searchQuery)
+        {
+            return RedirectToAction("Topic", new { id, searchQuery });
         }
 
         private ForumListingModel BuildForumListing(Forum forum)
