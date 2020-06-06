@@ -42,6 +42,7 @@ namespace WineForum
             services.AddScoped<IApplicationUser, ApplicationUserService>();
             services.AddScoped<IEmailSender, EmailSender>();
             services.AddScoped<IUpload, UploadService>();
+            services.AddSingleton(Configuration);
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));

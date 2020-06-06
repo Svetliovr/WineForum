@@ -338,8 +338,8 @@ button, input, optgroup, select, textarea {
 
 #userProfileImage {
     display: inline-block;
-    width: 80px;
-    height: 80px;
+    width: 200px;
+    height: 200px;
     background-color: white;
     background-size: 100%;
     background-repeat: no-repeat;

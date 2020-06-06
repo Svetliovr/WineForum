@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+   "AzureStorageAccount": "DefaultEndpointsProtocol=https;AccountName=winetalk;AccountKey=dguDDgDS6pNoIk7yWWLsOcrIWkqNbijlHiaJJT4TlODO8UGqvOa/ZU1VibEA5VmpGVdrbkrzhvNu47TfOslMdA==;EndpointSuffix=core.windows.net"
+  }
+}
