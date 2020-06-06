@@ -14,6 +14,7 @@ namespace WineForum.Service
         private readonly ApplicationDbContext _context;
 
 
+
         public PostService(ApplicationDbContext context)
         {
             _context = context;
@@ -62,7 +63,10 @@ namespace WineForum.Service
 
         public IEnumerable<Post> GetFilteredPosts(string searchQuery)
         {
-            throw new NotImplementedException();
+            var normalized = searchQuery.ToLower();
+            return GetAll().Where(post
+                => post.Title.ToLower().Contains(normalized)
+                || post.Content.ToLower().Contains(normalized));
         }
 
         public IEnumerable<Post> GetFilteredPosts(Forum forum, string searchQuery)
@@ -70,8 +74,8 @@ namespace WineForum.Service
             return string.IsNullOrEmpty(searchQuery)
            ? forum.Posts
            : forum.Posts
-           .Where(post => post.Title.Contains(searchQuery)
-               || post.Content.Contains(searchQuery));
+           .Where(post => post.Title.ToLower().Contains(searchQuery)
+               || post.Content.ToLower().Contains(searchQuery));
         }
 
         public IEnumerable<Post> GetLatestPosts(int n)

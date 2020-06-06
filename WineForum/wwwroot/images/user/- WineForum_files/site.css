@@ -212,17 +212,11 @@
         transition: ease-in 0.2s;
     }
 
-
 .btn-file {
     color: white;
     width: 100%;
     background-color: #4FC3F7;
     transition: ease 0.3s;
-}
-button, input, optgroup, select, textarea {
-    color: black;
-    font: inherit;
-    margin: 0;
 }
 
     .btn-file:hover {
