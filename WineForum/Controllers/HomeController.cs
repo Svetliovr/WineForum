@@ -41,7 +41,8 @@ namespace WineForum.Controllers
                 AuthorRating = post.User.Rating,
                 DatePosted = post.Created.ToString(),
                 RepliesCount = post.Replies.Count(),
-                Forum = GetForumListingForPost(post)
+                Forum = GetForumListingForPost(post),
+                
                 });
             return new HomeIndexModel
             {

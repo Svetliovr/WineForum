@@ -8,7 +8,7 @@ using WineForum.Data.Models;
 
 namespace WineForum.Service
 {
-    class ApplicationUserService : IApplicationUser
+    public class ApplicationUserService : IApplicationUser
     {
         private readonly ApplicationDbContext _context;
 

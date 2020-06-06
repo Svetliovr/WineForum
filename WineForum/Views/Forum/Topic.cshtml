@@ -25,8 +25,8 @@
 
                 @if (!Context.User.Identity.IsAuthenticated)
                 {
-                    <span>You must be a <a asp-controller="Identity" asp-action="/Account/Register">Registered member</a> to create a new post.</span>
-                    <span>You have an account? <a asp-controller="Identity" asp-action="/Account/Login">Login</a></span>
+                    <span>You must be a <a asp-controller="Identity" asp-action="Register">Registered member</a> to create a new post.</span>
+                    <span>You have an account? <a asp-controller="Identity" asp-action="Login">Login</a></span>
                 }
             </p>
         </div>
