@@ -28,22 +28,22 @@ namespace WineForum.Controllers
         {
             var post = _postService.GetById(id);
             var replies = BuildPostReplies(post.Replies);
-            
 
-             var model = new PostIndexModel
-             {
+
+            var model = new PostIndexModel
+            {
                 Id = post.Id,
-                 Title = post.Title,
-                 AuthorId = post.User.Id,
-                 AuthorName = post.User.UserName,
-                 AuthorImageUrl = post.User.ProfileImageUrl,
-                 AuthorRating = post.User.Rating,
-                 Created = post.Created,
-                 PostContent = post.Content,
-                 Replies = replies,
-                 ForumId = post.Forum.Id,
-                 ForumName = post.Forum.Title,
-                 
+                Title = post.Title,
+                AuthorId = post.User.Id,
+                AuthorName = post.User.UserName,
+                AuthorImageUrl = post.User.ProfileImageUrl,
+                AuthorRating = post.User.Rating,
+                Created = post.Created,
+                PostContent = post.Content,
+                Replies = replies,
+                ForumId = post.Forum.Id,
+                ForumName = post.Forum.Title,
+                
              };
              
             return View(model);

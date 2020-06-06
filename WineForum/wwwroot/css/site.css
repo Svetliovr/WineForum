@@ -396,6 +396,17 @@ button, input, optgroup, select, textarea {
     padding: 8px;
 }
 
+.isAdmin{
+    display: inline-block;
+    padding: 3px;
+    background-color: #FFEB3B;
+    color: #000;
+    font-family: 'Roboto Mono';
+}
+.smaller {
+    font-size:0.8em;
+}
+
 #postReply {
     padding: 18px;
     margin-bottom: 8px;
