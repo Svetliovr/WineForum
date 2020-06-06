@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WineForum.Data;
 
 namespace WineForum.Service
 {
-    class UploadService
+    public class UploadService:IUpload
     {
     }
 }

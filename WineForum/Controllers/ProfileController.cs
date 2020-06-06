@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Net.Http.Headers;
 using WineForum.Data;
 using WineForum.Data.Models;
 using WineForum.Models.ApplicationUser;
@@ -42,5 +44,7 @@ namespace WineForum.Controllers
             };
             return View(model);
         }
+       
+        
     }
 }
