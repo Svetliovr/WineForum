@@ -17,5 +17,6 @@ namespace WineForum.Data
         Task UpdateForumDescription(int forumId, string newDescription);
         IEnumerable<ApplicationUser> GetAllActiveUsers(int id);
         bool HasRecentPost(int id);
+        IEnumerable<ApplicationUser> GetActiveUsers(int id);
     }
 }
