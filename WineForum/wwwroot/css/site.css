@@ -39,14 +39,14 @@
 }
 
 .sectionHeader {
-    background-image: linear-gradient(to right,#36090e,#43191d);
-    padding: 8px 0 24px 24px;
+    background-color: hsla(26, 79%, 91%, 1);
+    padding: 8px 0 18px 24px;
 }
 
 .sectionHeading {
-    color: white;
+    color: black;
     font-size: 1.3em;
-    font-family: 'Roboto';
+    font-family: 'Roboto Mono';
     padding: 16px 0 16px 0;
     border-bottom: 1px solid #335;
     margin-bottom: 12px;
@@ -74,8 +74,9 @@
 .frontPageLearn {
     padding: 12px 0 0 32px;
     font-family: 'Roboto';
-    color: goldenrod;
+    color: black;
     font-weight: lighter;
+    background-color: hsla(26, 79%, 91%, 1);
 }
 
 
@@ -257,11 +258,11 @@ button, input, optgroup, select, textarea {
     }
 /* Forum index */
 #forumIndexTable td {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: hsla(26, 79%, 91%, 0.8);
 }
 
 #forumIndexTable tr:hover {
-    background-color: rgba(0, 116, 238, 1);
+    background-color: hsla(26, 79%, 91%, 1);
 }
 
 .forumData {
@@ -281,7 +282,7 @@ button, input, optgroup, select, textarea {
 }
 
 .forumDescription {
-    color: #555;
+    color: #000;
     font-family: 'Roboto';
 }
 
@@ -297,20 +298,20 @@ button, input, optgroup, select, textarea {
 }
 
 .forumPostCount {
-    color: #888;
+    color: #000;
     font-family: 'Roboto Mono';
     font-size: 0.9em;
 }
 
 .forumMemberCount {
-    color: #888;
+    color: #000;
     font-family: 'Roboto Mono';
     font-size: 0.9em;
 }
 
 #forumIndexContent {
     padding-bottom: 60px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: hsla(26, 79%, 91%, 0.4);
 }
 
 .searchIndexTable {
@@ -333,7 +334,7 @@ button, input, optgroup, select, textarea {
 /*User Profile*/
 .userProfile {
     padding: 32px 0 64px 24px;
-    background-color: white;
+    background-color: rgba(250, 230, 214, 0.5);
 }
 
 #userProfileImage {
@@ -347,14 +348,14 @@ button, input, optgroup, select, textarea {
 
 #userEmailLabel, #userBioLaber, #userCreatedLabel, #userRating, #userActiveLabel {
     display: block;
-    color: #444;
+    color: black;
     font-family: 'Roboto';
     padding-top: 3px;
 }
 
 #userName {
     display: block;
-    color: #2569d5;
+    color: black;
     font-family: 'Roboto';
     font-size: 1.7em;
 }
@@ -469,7 +470,7 @@ button, input, optgroup, select, textarea {
 }
 
 .sectionDescription {
-    color: #EEE;
+    color: #000;
 }
 
 .frontPageTopContainer {
