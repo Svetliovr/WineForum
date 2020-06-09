@@ -15,17 +15,23 @@
             @if (User.Identity.Name == Model.UserName)
             {
                 <form method="post" enctype="multipart/form-data" asp-controller="Profile" asp-action="UploadProfileImage">
+                    <label></label>
                     <div id="upload">
                         <label class="btn btn-default btn-file">
-                            Browse <input type="file" name="file" style="display:none" />
+                            Browse Image<input type="file" name="file" style="display:none" />
                         </label>
                     </div>
-                    <button type="submit" id="btn-profile" class="btn btn-default">Submit</button>
+                    <label></label>
+                    <div id="submit">
+                        
+                            <button type="submit" id="btn-profile" class="btn btn-default">Submit</button>
+                        
+                    </div>
                 </form>
             }
         </div>
         <div class="col-md-8">
-            <span id="userName">@Model.UserName</span>
+            <span id="userName">Username: @Model.UserName</span>
             @if (@Model.IsAdmin)
             {
                 <span class="isAdmin">Admin</span>

@@ -1,17 +1,26 @@
 ﻿body {
     padding: 50px 0 20px 0;
     background-color: #EEE;
-    background-image: url("/images/theme/bg1.png");
+    background-image: url("/images/theme/pexels-photo.png");
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    font-family: 'Roboto';
+    color: black;
 }
 
 .navbar {
     box-shadow: 0 4px 6px -5px #000;
     background-color: #fae5d5;
 }
+.forgotpass .register{
+    font-family:'Roboto Mono';
+    font-weight:bold;
+    color: white;
+    
+}
+
 
 .navLogo {
     background-image: url("/images/theme/log1.png");
@@ -25,37 +34,60 @@
 .navbar-nav{
     color:black;
 }
+
 .navbar-inverse .navbar-link {
     color: #000;
     font-family: 'Roboto Mono';
     font-weight: bold;
 }
+    .navbar-inverse .navbar-link:hover {
+        color: white;
+        background-color: rgb(249, 200, 163);
+        transition: ease-in-out 0.2s;
+        background-size:100%;
+    }
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: white;
+    background-color: rgb(249, 200, 163);
+    transition: ease-in-out 0.2s;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: rgba(249, 200, 163, 1);
+}
+
+
 .navbar-inverse .navbar-nav > li > a {
     color: #000;
     font-family: 'Roboto Mono'
 }
+
 .navbar li {
     font-weight: bold;
 }
 
 .sectionHeader {
-    background-color: hsla(26, 79%, 91%, 1);
-    padding: 8px 0 18px 24px;
+    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.9),hsla(26, 79%, 91%, 0.1));
+    padding: 10px 0 18px 24px;
 }
 
 .sectionHeading {
     color: black;
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-family: 'Roboto Mono';
     padding: 16px 0 16px 0;
     border-bottom: 1px solid #335;
     margin-bottom: 12px;
+    font-weight:bold;
 }
 
 .postHeading {
-    color: white;
-    font-size: 1.1em;
-    font-family: 'Roboto';
+    color: black;
+    font-size: 1.5em;
+    font-family: 'Roboto Mono';
+    font-weight: bold;
     padding: 16px 0 16px 0;
 }
 
@@ -65,18 +97,24 @@
 }
 
 /* Front page heading */
+
+
+
 .frontPageSplash {
-    background-image: url("/images/theme/splash1.png");
+    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.9),hsla(26, 79%, 91%, 0.1));
     background-repeat: no-repeat;
     background-position: center;
+    
+    background-size: 100%;
 }
 
 .frontPageLearn {
-    padding: 12px 0 0 32px;
+    padding: 12px 0 20px 32px;
     font-family: 'Roboto';
     color: black;
     font-weight: lighter;
-    background-color: hsla(26, 79%, 91%, 1);
+    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.9),hsla(26, 79%, 91%, 0.1));
+    background-size: 100%;
 }
 
 
@@ -95,18 +133,32 @@
 /* Front page content */
 
 .frontPageContent {
-    background-color: #43191d;
-    opacity: 0.7;
-    padding: 16px;
+    background-color:transparent;
+    
+   
 }
-
+.col-md-4{
+min-height: 1px;
+padding-right: 15px;
+padding-left: 15px;
+padding-bottom: 15px
+}
 #latestPosts {
     font-size: 1.2em;
     font-weight: lighter;
-    color: goldenrod;
+    color: black;
     margin: 4px 0 16px 0;
+    font-family:'Roboto Mono';
+    
 }
-
+.table td {
+    background-color: hsla(26, 79%, 91%, 0.8);
+   
+}
+.table tr:hover {
+    background-color: hsla(26, 79%, 91%, 1);
+   
+}
 /*Post page*/
 
 .postTitle {
@@ -120,12 +172,12 @@
     font-size: 0.8em;
 }
 
-.postData {
+.postDate {
     display: inline-block;
 }
 
 .postDate {
-    color: #888;
+    color: black;
     font-family: 'Roboto Mono';
     font-size: 0.8em;
 }
@@ -157,7 +209,7 @@
 
 #postContentContainer {
     font-family: 'Roboto';
-    color: #222;
+    color: transparent;
     padding: 22px;
     border-left: 1px solid #ddd;
 }
@@ -174,26 +226,29 @@
 }
 
 #postIndexContent {
-    background-color: white;
+    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.9),hsla(26, 79%, 91%, 0.1));
     box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.3);
 }
 
 .postHeader {
-    background-color: #212121;
-    padding: 8px 0px 24px 24px;
+    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.9),hsla(26, 79%, 91%, 0.1));
+    
+    padding: 8px 0 24px 24px;
 }
 
 #headingBtn {
+    background-color:#ad3a3a;
     float: right;
     margin-right: 20px;
 }
 
 /*Custom Buttons*/
 .btn-back {
-    background-color: #555;
+    background-color: #ad3a3a;
     color: #fff !important;
     transition: ease-in 0.1s;
-    border-radius: 0px !important;
+    border-radius: 0 !important;
+    border-color: #ad3a3a;
 }
 
 .body-back:hover {
@@ -202,22 +257,22 @@
 }
 
 .btn-newReply {
-    background-color: #5C6BC0 !important;
+    background-color: #ad3a3a !important;
     color: #fff !important;
     transition: ease-in 0.1s;
-    border-radius: 0px !important;
+    border-radius: 0 !important;
 }
 
     .btn-newReply:hover {
-        background-color: #9FA8DA !important;
+        background-color: #ad3a3a !important;
         transition: ease-in 0.2s;
     }
 
 
 .btn-file {
     color: white;
-    width: 100%;
-    background-color: #4FC3F7;
+    width: inherit;
+    background-color: #ad3a3a;
     transition: ease 0.3s;
 }
 button, input, optgroup, select, textarea {
@@ -226,16 +281,28 @@ button, input, optgroup, select, textarea {
     margin: 0;
 }
 
-    .btn-file:hover {
-        background-color: #039BE5;
-        transition: ease 0.3s;
-    }
+.btn-file:hover {
+    background-color: #842626;
+    color:white;
+    transition: ease 0.3s;
+}
+.btn-default {
+    color: #f5f5f5;
+    background-color: #ad3a3a;
+    border-color: rgba(173, 58, 58, 0.4);
+}
+.btn-default:hover {
+    color: white;
+    background-color: #842626;
+    border-color: rgba(173, 58, 58, 0.4);
+}
+
 
 .btn-newPost {
     background-color: #c62828 !important;
     color: #fff !important;
     transition: ease-in 0.2s;
-    border-radius: 0px !important;
+    border-radius: 0 !important;
 }
 
     .btn-newPost:hover {
@@ -245,20 +312,21 @@ button, input, optgroup, select, textarea {
     }
 
 .btn-submitPost {
-    background-color: #00695C !important;
+    background-color: #ad3a3a !important;
     color: #fff !important;
     transition: ease-in 0.2s;
-    border-radius: 0px !important;
+    border-radius: 0 !important;
 }
 
     .btn-submitPost:hover {
         transition: ease-in 0.1s;
-        background-color: #00897B !important;
+        background-color: #ad3a3a !important;
         color: #fff !important;
     }
 /* Forum index */
 #forumIndexTable td {
     background-color: hsla(26, 79%, 91%, 0.8);
+
 }
 
 #forumIndexTable tr:hover {
@@ -310,7 +378,7 @@ button, input, optgroup, select, textarea {
 }
 
 #forumIndexContent {
-    padding-bottom: 60px;
+    padding-bottom: 15px;
     background-color: hsla(26, 79%, 91%, 0.4);
 }
 
@@ -341,7 +409,7 @@ button, input, optgroup, select, textarea {
     display: inline-block;
     width: 200px;
     height: 200px;
-    background-color: white;
+    background-color: transparent;
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -349,14 +417,15 @@ button, input, optgroup, select, textarea {
 #userEmailLabel, #userBioLaber, #userCreatedLabel, #userRating, #userActiveLabel {
     display: block;
     color: black;
-    font-family: 'Roboto';
+    font-family: 'Roboto Mono';
     padding-top: 3px;
+    font-weight:lighter;
 }
 
 #userName {
     display: block;
     color: black;
-    font-family: 'Roboto';
+    font-family: 'Roboto Mono';
     font-size: 1.7em;
 }
 
@@ -387,14 +456,16 @@ button, input, optgroup, select, textarea {
 /*replies*/
 .replyContent {
     display: table;
-    background-color: white;
+    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.9),hsla(26, 79%, 91%, 0.1));
+    
     border-bottom: 1px solid #aaa;
     width: inherit;
 }
 
 #postReplyRow {
-    background-color: #3F51B5;
+    background-color: #fae6d7;
     padding: 8px;
+    border-bottom: 1px solid transparent
 }
 
 .isAdmin{
@@ -443,7 +514,7 @@ button, input, optgroup, select, textarea {
 
 .hasRecentPost {
     padding: 2px;
-    background-color: orangered;
+    background-color: black;
     color: white;
     text-align: center;
     border-radius: 1px;
@@ -456,12 +527,13 @@ button, input, optgroup, select, textarea {
     margin-bottom: 8px;
 }
 
-.auth
+
 /*wrapping element*/
 .body-content {
+    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.4),hsla(26, 79%, 91%, 0));
     padding-left: 15px;
     padding-right: 15px;
-}
+    }
 
 /*carousel*/
 .carousel-caption p {
@@ -479,13 +551,23 @@ button, input, optgroup, select, textarea {
     background-color: #2569D5;
     font-family: 'Roboto';
 }
-
-.homeSearch {
-    width: 100%;
-    margin: 8px;
+.searchBar {
+    width: 250%;
     background: rgba(0,0,0,0.2);
     padding: 10px;
-    border: 0px;
+    border: 0;
+    height: 1.4em;
+    font-size: 1.1em;
+    font-family: 'Roboto Mono';
+    font-weight: lighter;
+    transition: ease-in 0.2s;
+}
+.homeSearch {
+    width: 90%;
+    
+    background: rgba(0,0,0,0.2);
+    padding: 10px;
+    border: 0;
     height: 1.4em;
     font-size: 2.1em;
     font-family: 'Roboto Mono';

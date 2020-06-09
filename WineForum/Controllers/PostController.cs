@@ -105,6 +105,7 @@ namespace WineForum.Controllers
             return replies.Select(reply => new PostReplyModel
             {
                 Id = reply.Id,
+                AuthorName = reply.User.UserName,
                 AuthorImageUrl = reply.User.ProfileImageUrl,
                 AuthorId = reply.User.Id,
                 AuthorRating = reply.User.Rating,

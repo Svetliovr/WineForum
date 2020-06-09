@@ -3,8 +3,8 @@
 <div class=" container body-content">
     <div class="row frontPageSplash">
         <div class="col-md-6 frontPageLearn">
-            <div class="frontPageHeading">Let's talk about Wine</div>
-            <p class="frontpageSubHeading">Share your experiences with the community!</p>
+            <div class="frontPageHeading">Добре дошли в WineForum</div>
+            <p class="frontpageSubHeading">Share your experience with the community!</p>
             <div>
                 <form asp-controller="Search" asp-action="Search" method="post">
                     <input asp-for="SearchQuery" type="text" class="homeSearch" placeholder="Search posts.." />
@@ -29,6 +29,10 @@
                             </a>
                         </div>
                         <div class="postSubTitle">
+                            <span class="postUser">
+                                Author:
+                                <a asp-controller="Profile" asp-action="Detail" asp-route-id="@post.AuthorId">@post.AuthorName</a>
+                            </span>
                             @if (post.RepliesCount == 1)
                             {
                                 <span>@post.RepliesCount Reply</span>
@@ -41,9 +45,7 @@
                             {
                                 <span>@post.RepliesCount Replies</span>
                             }
-                            <span class="postUser">
-                                <a asp-controller="Profile" asp-action="Detail" asp-route-id="@post.AuthorId">@post.AuthorName</a>
-                            </span>
+
                         </div>
                     </td>
                 </tr>

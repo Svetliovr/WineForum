@@ -74,14 +74,14 @@ namespace WineForum.Controllers
             return RedirectToAction("Index", "Post", new { id = model.PostId });
         }
 
-        private PostReply BuildReply(PostReplyModel model, ApplicationUser user)
+        public PostReply BuildReply(PostReplyModel reply, ApplicationUser user)
         {
-            var post = _postService.GetById(model.PostId);
+            var post = _postService.GetById(reply.PostId);
 
             return new PostReply
             {
                 Post = post,
-                Content = model.ReplyContent,
+                Content = reply.ReplyContent,
                 Created = DateTime.Now,
                 User = user
             };
