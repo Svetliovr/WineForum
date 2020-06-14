@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WineForum.Models.Post;
 
 namespace WineForum.Models.Forum
 {
@@ -15,5 +16,8 @@ namespace WineForum.Models.Forum
         public int NumberOfPosts { get; set; }
         public int NumberOfUsers { get; set; }
         public bool HasRecentPost { get; set; }
+
+        public PostListingModel Latest { get; set; }
+        public IEnumerable<PostListingModel> AllPosts { get; set; }
     }
 }

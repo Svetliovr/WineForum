@@ -47,7 +47,7 @@ namespace WineForum.Controllers
                 AuthorImageUrl = user.ProfileImageUrl,
                 AuthorRating = user.Rating,
                 AuthorId = user.Id,
-                IsAuthorAdmin = User.IsInRole("Admin"),
+                
 
                 ForumId = post.Forum.Id,
                 ForumName = post.Forum.Title,

@@ -10,6 +10,7 @@ namespace WineForum.Data
     {
         ApplicationUser GetById(string id);
         IEnumerable<ApplicationUser> GetAll();
+        Task Deactivate(ApplicationUser user);
         Task SetProfileImage(string id, Uri uri);
         Task UpdateUserRating(string id, Type type);
     }

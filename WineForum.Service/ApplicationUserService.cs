@@ -16,6 +16,15 @@ namespace WineForum.Service
         {
             _context = context;
         }
+        public async Task Add(ApplicationUser user)
+        {
+            _context.Add(user);
+            await _context.SaveChangesAsync();
+        }
+        public ApplicationUser GetByName(string name)
+        {
+            return _context.ApplicationUsers.FirstOrDefault(user => user.UserName == name);
+        }
 
         public IEnumerable<ApplicationUser> GetAll()
         {
@@ -50,6 +59,13 @@ namespace WineForum.Service
             if (type == typeof(PostReply))
                 inc = 3;
             return userRating + inc;
+        }
+
+        public async Task Deactivate(ApplicationUser user)
+        {
+            user.IsActive = false;
+            _context.Update(user);
+            await _context.SaveChangesAsync();
         }
     }
 }

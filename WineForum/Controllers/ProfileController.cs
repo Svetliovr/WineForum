@@ -16,7 +16,7 @@ namespace WineForum.Controllers
 {
     public class ProfileController : Controller
     {
-        private readonly UserManager<ApplicationUser> _userManager;
+        private static UserManager<ApplicationUser> _userManager;
         private readonly IApplicationUser _userService;
         private readonly IUpload _uploadService;
         private readonly IConfiguration _configuration;
@@ -35,17 +35,20 @@ namespace WineForum.Controllers
 
         public IActionResult Detail(string id)
         {
+            Console.WriteLine(id);
+
             var user = _userService.GetById(id);
             var userRoles = _userManager.GetRolesAsync(user).Result;
 
-            var model = new ProfileModel()
+            var model = new ProfileModel
             {
-                UserId = user.Id,
+                Id = user.Id,
                 Email = user.Email,
                 UserName = user.UserName,
                 UserRating = user.Rating.ToString(),
                 ProfileImageUrl = user.ProfileImageUrl,
                 MemberSince = user.MemberSince,
+                IsActive=user.IsActive,
                 IsAdmin = userRoles.Contains("Admin")
             };
             return View(model);
@@ -78,11 +81,13 @@ namespace WineForum.Controllers
             .OrderByDescending(user => user.Rating)
             .Select(u => new ProfileModel
             {
+                Id= u.Id,
                 Email = u.Email,
-                UserName = u.UserName,
+                UserName=u.UserName,
                 ProfileImageUrl = u.ProfileImageUrl,
                 UserRating = u.Rating.ToString(),
                 MemberSince = u.MemberSince,
+                IsActive=u.IsActive
 
             });
             var model = new ProfileListModel
@@ -90,6 +95,12 @@ namespace WineForum.Controllers
                 Profiles = profiles
             };
             return View(model);
+        }
+        public IActionResult Deactivate(string userId)
+        {
+            //var user = _userService.GetById(userId);
+            //_userService.Deactivate(user);
+            return RedirectToAction("Index", "Profile");
         }
     }
 }
