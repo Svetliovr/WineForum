@@ -21,7 +21,6 @@
     
 }
 
-
 .navLogo {
     background-image: url("/images/theme/log1.png");
     background-size: 100%;
@@ -69,16 +68,17 @@
 }
 
 .sectionHeader {
-    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.9),hsla(26, 79%, 91%, 0.1));
-    padding: 10px 0 18px 24px;
+    background-color: transparent;
+    padding: 10px 0 16px 0;
 }
+
 
 .sectionHeading {
     color: black;
     font-size: 1.5em;
     font-family: 'Roboto Mono';
-    padding: 16px 0 16px 0;
-    border-bottom: 1px solid #335;
+    padding: 10px 0 16px 0;
+    border-bottom: 1px solid black;
     margin-bottom: 12px;
     font-weight:bold;
 }
@@ -101,10 +101,9 @@
 
 
 .frontPageSplash {
-    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.9),hsla(26, 79%, 91%, 0.1));
+    background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
-    
     background-size: 100%;
 }
 
@@ -113,7 +112,7 @@
     font-family: 'Roboto';
     color: black;
     font-weight: lighter;
-    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.9),hsla(26, 79%, 91%, 0.1));
+    background-color:transparent;
     background-size: 100%;
 }
 
@@ -152,12 +151,10 @@ padding-bottom: 15px
     
 }
 .table td {
-    background-color: hsla(26, 79%, 91%, 0.8);
-   
+    background-color: rgba(186, 209, 222, 0.4);
 }
 .table tr:hover {
-    background-color: hsla(26, 79%, 91%, 1);
-   
+    background-color: rgba(186, 209, 222, 0.8);
 }
 /*Post page*/
 
@@ -312,6 +309,8 @@ button, input, optgroup, select, textarea {
     }
 
 .btn-submitPost {
+    display:inline-block;
+    margin-top:10px;
     background-color: #ad3a3a !important;
     color: #fff !important;
     transition: ease-in 0.2s;
@@ -325,12 +324,12 @@ button, input, optgroup, select, textarea {
     }
 /* Forum index */
 #forumIndexTable td {
-    background-color: hsla(26, 79%, 91%, 0.8);
-
+    background-color: hsla(200, 33%, 81%, 0.8);
+    
 }
 
 #forumIndexTable tr:hover {
-    background-color: hsla(26, 79%, 91%, 1);
+    background-color: hsla(200, 33%, 81%, 1);
 }
 
 .forumData {
@@ -341,14 +340,30 @@ button, input, optgroup, select, textarea {
     font-family: 'Roboto';
     font-weight: bold;
     font-size: 1.1em;
+    color: black;
 }
-
+.forumCreate {
+    padding: 32px 0 64px 24px;
+    background-color: rgba(186, 209, 222, 0.4);
+}
 .forumSubTitle {
     color: #888;
     font-family: 'Roboto Mono';
     font-size: 0.8em;
 }
-
+.form-control {
+    display: inline-block;
+    width: 95%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 .forumDescription {
     color: #000;
     font-family: 'Roboto';
@@ -379,12 +394,12 @@ button, input, optgroup, select, textarea {
 
 #forumIndexContent {
     padding-bottom: 15px;
-    background-color: hsla(26, 79%, 91%, 0.4);
+    background-color: rgba(186, 209, 222, 0.4);
 }
 
 .searchIndexTable {
     padding-bottom: 60px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(186, 209, 222, 0.4);
     border: 1px solid #555;
 }
 
@@ -401,8 +416,9 @@ button, input, optgroup, select, textarea {
 
 /*User Profile*/
 .userProfile {
-    padding: 32px 0 64px 24px;
-    background-color: rgba(250, 230, 214, 0.5);
+    padding: 32px 0 64px 16px;
+    background-color: rgba(186, 209, 222, 0.4);
+    ;
 }
 
 #userProfileImage {
@@ -414,7 +430,7 @@ button, input, optgroup, select, textarea {
     background-repeat: no-repeat;
 }
 
-#userEmailLabel, #userBioLaber, #userCreatedLabel, #userRating, #userActiveLabel {
+#userEmailLabel, #userBioLabel, #userCreatedLabel, #userRating, #userActiveLabel {
     display: block;
     color: black;
     font-family: 'Roboto Mono';
@@ -530,10 +546,11 @@ button, input, optgroup, select, textarea {
 
 /*wrapping element*/
 .body-content {
-    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.4),hsla(26, 79%, 91%, 0));
+    background-color: transparent;
     padding-left: 15px;
     padding-right: 15px;
-    }
+    padding-bottom: 15px;
+}
 
 /*carousel*/
 .carousel-caption p {
