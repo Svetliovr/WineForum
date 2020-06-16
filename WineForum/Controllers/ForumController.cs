@@ -63,6 +63,7 @@ namespace WineForum.Controllers
                 Id = post.Id,
                 AuthorRating = post.User.Rating,
                 AuthorName = post.User.UserName,
+                AuthorId=post.User.Id,
                 Title = post.Title,
                 DatePosted = post.Created.ToString(),
                 RepliesCount = post.Replies.Count(),

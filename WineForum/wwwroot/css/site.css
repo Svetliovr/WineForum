@@ -12,7 +12,7 @@
 
 .navbar {
     box-shadow: 0 4px 6px -5px #000;
-    background-color: #fae5d5;
+    background-color: #d9e8ed;
 }
 .forgotpass .register{
     font-family:'Roboto Mono';
@@ -20,6 +20,13 @@
     color: white;
     
 }
+
+.col-md-6 {
+    padding: 32px 16px 64px 16px;
+   
+}
+
+
 
 .navLogo {
     background-image: url("/images/theme/log1.png");
@@ -143,7 +150,7 @@ padding-left: 15px;
 padding-bottom: 15px
 }
 #latestPosts {
-    font-size: 1.2em;
+    font-size: 2em;
     font-weight: lighter;
     color: black;
     margin: 4px 0 16px 0;
@@ -151,23 +158,29 @@ padding-bottom: 15px
     
 }
 .table td {
-    background-color: rgba(186, 209, 222, 0.4);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 .table tr:hover {
-    background-color: rgba(186, 209, 222, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
 }
-/*Post page*/
-
-.postTitle {
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+    /*Post page*/
+    .postTitle {
     font-family: 'Roboto';
     font-weight: bold;
 }
 
 .postSubTitle {
-    color: #888;
-    font-family: 'Roboto Mono';
+    color: black;
+    font-family: 'Roboto mono';
     font-size: 0.8em;
-}
+    font-weight:bold;
+}la
 
 .postDate {
     display: inline-block;
@@ -176,7 +189,7 @@ padding-bottom: 15px
 .postDate {
     color: black;
     font-family: 'Roboto Mono';
-    font-size: 0.8em;
+    font-size: 0.95em;
 }
 
 .postLogo {
@@ -201,7 +214,7 @@ padding-bottom: 15px
 }
 
 .postIndexTable {
-    font-size: 1.4em;
+    font-size: 1.9em;
 }
 
 #postContentContainer {
@@ -344,7 +357,8 @@ button, input, optgroup, select, textarea {
 }
 .forumCreate {
     padding: 32px 0 64px 24px;
-    background-color: rgba(186, 209, 222, 0.4);
+   
+    
 }
 .forumSubTitle {
     color: #888;
@@ -353,7 +367,7 @@ button, input, optgroup, select, textarea {
 }
 .form-control {
     display: inline-block;
-    width: 95%;
+    width: 40%;
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;
@@ -394,7 +408,7 @@ button, input, optgroup, select, textarea {
 
 #forumIndexContent {
     padding-bottom: 15px;
-    background-color: rgba(186, 209, 222, 0.4);
+    background-image: linear-gradient(to bottom,rgba(255,255,255,0),rgba(255, 255, 255, 0.2));
 }
 
 .searchIndexTable {
@@ -417,8 +431,8 @@ button, input, optgroup, select, textarea {
 /*User Profile*/
 .userProfile {
     padding: 32px 0 64px 16px;
-    background-color: rgba(186, 209, 222, 0.4);
-    ;
+    
+    
 }
 
 #userProfileImage {
@@ -569,7 +583,7 @@ button, input, optgroup, select, textarea {
     font-family: 'Roboto';
 }
 .searchBar {
-    width: 250%;
+    width: 250px;
     background: rgba(0,0,0,0.2);
     padding: 10px;
     border: 0;
