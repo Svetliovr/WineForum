@@ -30,26 +30,27 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-controller="Forum" asp-action="Create">Create Forum</a></li>
-                    <li><a asp-controller="Forum" asp-action="Index">Forums</a></li>
+
+                    <li><a asp-controller="Forum" asp-action="Index">Форуми</a></li>
+                    
                     @if (SignInManager.IsSignedIn(User))
                     {
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                Settings<span class="caret"></span>
+                                Опции<span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Profile</li>
-                                <li><a asp-controller="Profile" asp-action="Detail" asp-route-id="@UserManager.GetUserId(User)">My Profile</a></li>
+                                <li class="dropdown-header">Профил</li>
+                                <li><a asp-controller="Profile" asp-action="Detail" asp-route-id="@UserManager.GetUserId(User)">Моят Профил</a></li>
 
 
                                 @if (User.IsInRole("Admin"))
                                 {
                                     <li role="separator" class="divider"></li>
-                                    <li class="dropdown-header">Admin</li>
-
-                                    <li><a asp-controller="Profile" asp-action="Index">View Users</a></li>
+                                    <li class="dropdown-header">Администратор</li>
+                                    <li><a asp-controller="Forum" asp-action="Create">Създай Форум</a></li>
+                                    <li><a asp-controller="Profile" asp-action="Index">Потребители</a></li>
 
                                 }
                             </ul>

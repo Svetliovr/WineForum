@@ -189,7 +189,7 @@
 
 /*Custom Buttons*/
 .btn-back {
-    background-color: #555;
+    background-color: #5C6BC0;
     color: #fff !important;
     transition: ease-in 0.1s;
     border-radius: 0px !important;
@@ -383,6 +383,16 @@
     background-color: white;
     border-bottom: 1px solid #aaa;
     width: inherit;
+}
+#ReplyContent.form-control {
+    resize: none;
+    height: 250px;
+    width: 400px;
+}
+textarea#ReplyContent {
+    resize: none;
+    height: 250px;
+    width: 400px;
 }
 
 #postReplyRow {

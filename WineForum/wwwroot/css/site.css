@@ -48,20 +48,20 @@
 }
     .navbar-inverse .navbar-link:hover {
         color: white;
-        background-color: rgb(249, 200, 163);
+        background-color: #c62828;
         transition: ease-in-out 0.2s;
-        background-size:100%;
+        background-size: 100%;
     }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
     color: white;
-    background-color: rgb(249, 200, 163);
+    background-color: #8bd0e6;
     transition: ease-in-out 0.2s;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     color: #fff;
-    background-color: rgba(249, 200, 163, 1);
+    background-color: #8bd0e6;
 }
 
 
@@ -78,7 +78,12 @@
     background-color: transparent;
     padding: 10px 0 16px 0;
 }
-
+.textarea {
+    resize: none;
+    height: 250px;
+    width: 400px;
+    background-color:rgba(255,255,255,0.7);
+}
 
 .sectionHeading {
     color: black;
@@ -88,6 +93,15 @@
     border-bottom: 1px solid black;
     margin-bottom: 12px;
     font-weight:bold;
+}
+.sectionHeadingReply {
+    color: black;
+    font-size: 1.5em;
+    font-family: 'Roboto Mono';
+    padding: 16px 0px 36px 10px;
+    border-bottom: 1px solid black;
+    margin-bottom: 12px;
+    font-weight: bold;
 }
 
 .postHeading {
@@ -208,9 +222,11 @@ padding-bottom: 15px
 }
 
 .postAuthorContainer {
+    display:table-cell;
     padding: 12px;
     color: #444;
     font-family: 'Roboto';
+    border-right: 1px solid #aaa;
 }
 
 .postIndexTable {
@@ -236,13 +252,12 @@ padding-bottom: 15px
 }
 
 #postIndexContent {
-    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.9),hsla(26, 79%, 91%, 0.1));
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.3);
+    background-color: rgba(255, 255, 255, 0.6);
+  
 }
 
 .postHeader {
-    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.9),hsla(26, 79%, 91%, 0.1));
-    
+   
     padding: 8px 0 24px 24px;
 }
 
@@ -254,27 +269,30 @@ padding-bottom: 15px
 
 /*Custom Buttons*/
 .btn-back {
-    background-color: #ad3a3a;
+    background-color: #c62828;
     color: #fff !important;
     transition: ease-in 0.1s;
     border-radius: 0 !important;
-    border-color: #ad3a3a;
+   
 }
-
+    .btn-back:hover {
+        background-color: #e53935 !important;
+        transition: ease-in 0.2s;
+    }
 .body-back:hover {
     transition: ease-in 0.1s;
     background-color: #1E88E5 !important;
 }
 
 .btn-newReply {
-    background-color: #ad3a3a !important;
+    background-color: #c62828 !important;
     color: #fff !important;
     transition: ease-in 0.1s;
     border-radius: 0 !important;
 }
 
     .btn-newReply:hover {
-        background-color: #ad3a3a !important;
+        background-color: #e53935 !important;
         transition: ease-in 0.2s;
     }
 
@@ -285,27 +303,33 @@ padding-bottom: 15px
     background-color: #ad3a3a;
     transition: ease 0.3s;
 }
-button, input, optgroup, select, textarea {
+button, input, optgroup, select, {
     color: black;
     font: inherit;
     margin: 0;
 }
+textarea{
+    height:250px;
+    width:500px;
+    resize:none;
+    background-color: rgba(255,255,255,0.4);
+}
 
 .btn-file:hover {
     background-color: #842626;
-    color:white;
+    color: white;
     transition: ease 0.3s;
 }
 .btn-default {
     color: #f5f5f5;
-    background-color: #ad3a3a;
+    background-color: #c62828;
     border-color: rgba(173, 58, 58, 0.4);
 }
-.btn-default:hover {
-    color: white;
-    background-color: #842626;
-    border-color: rgba(173, 58, 58, 0.4);
-}
+    .btn-default:hover {
+        color: white;
+        background-color: #e53935;
+        border-color: rgba(173, 58, 58, 0.4);
+    }
 
 
 .btn-newPost {
@@ -322,9 +346,9 @@ button, input, optgroup, select, textarea {
     }
 
 .btn-submitPost {
-    display:inline-block;
-    margin-top:10px;
-    background-color: #ad3a3a !important;
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #c62828 !important;
     color: #fff !important;
     transition: ease-in 0.2s;
     border-radius: 0 !important;
@@ -332,17 +356,16 @@ button, input, optgroup, select, textarea {
 
     .btn-submitPost:hover {
         transition: ease-in 0.1s;
-        background-color: #ad3a3a !important;
+        background-color: #e53935 !important;
         color: #fff !important;
     }
 /* Forum index */
 #forumIndexTable td {
-    background-color: hsla(200, 33%, 81%, 0.8);
-    
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 #forumIndexTable tr:hover {
-    background-color: hsla(200, 33%, 81%, 1);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .forumData {
@@ -408,7 +431,7 @@ button, input, optgroup, select, textarea {
 
 #forumIndexContent {
     padding-bottom: 15px;
-    background-image: linear-gradient(to bottom,rgba(255,255,255,0),rgba(255, 255, 255, 0.2));
+   
 }
 
 .searchIndexTable {
@@ -419,7 +442,7 @@ button, input, optgroup, select, textarea {
 
 .forumResultContent {
     padding-bottom: 60px;
-    background-color: rgba(255, 255, 255, 0.9);
+    
 }
 
 .noPosts {
@@ -479,21 +502,20 @@ button, input, optgroup, select, textarea {
 
 /*user profile pic*/
 .userProfilePic {
-    height: 140px;
-    width: 140px;
+    height: 100px;
+    width: 100px;
     background-size: 100%;
 }
 /*replies*/
 .replyContent {
     display: table;
-    background-image: linear-gradient(to right, hsla(26, 79%, 91%, 0.9),hsla(26, 79%, 91%, 0.1));
-    
+    background-color: rgba(255, 255, 255, 0.6);
     border-bottom: 1px solid #aaa;
     width: inherit;
 }
 
 #postReplyRow {
-    background-color: #fae6d7;
+  
     padding: 8px;
     border-bottom: 1px solid transparent
 }
@@ -512,7 +534,7 @@ button, input, optgroup, select, textarea {
 #postReply {
     padding: 18px;
     margin-bottom: 8px;
-    background-color: white;
+  
 }
 
 .replyAuthorBlock {
@@ -528,6 +550,8 @@ button, input, optgroup, select, textarea {
 .replyContentContainer, .replyAuthorContainer {
     display: table-cell;
     padding: 12px;
+    border-right: 1px solid #aaa;
+   
 }
 
 .isAdmin {

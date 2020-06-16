@@ -2420,7 +2420,7 @@ th {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
@@ -2708,6 +2708,7 @@ fieldset[disabled] .form-control {
 }
 textarea.form-control {
   height: auto;
+  background-color: rgba(255,255,255,0.8);
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   input[type="date"].form-control,

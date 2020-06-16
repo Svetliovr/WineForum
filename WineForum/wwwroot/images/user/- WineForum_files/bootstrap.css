@@ -2707,7 +2707,14 @@ fieldset[disabled] .form-control {
   cursor: not-allowed;
 }
 textarea.form-control {
-  height: auto;
+  resize:none;
+  height: 250px;
+  width:400px;
+}
+textarea#ReplyContent {
+    resize: none;
+    height: 250px;
+    width: 400px;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   input[type="date"].form-control,
@@ -2818,7 +2825,9 @@ select.input-sm {
 }
 textarea.input-sm,
 select[multiple].input-sm {
-  height: auto;
+    resize: none;
+    height: 250px;
+    width: 400px;
 }
 .form-group-sm .form-control {
   height: 30px;
@@ -2833,7 +2842,9 @@ select[multiple].input-sm {
 }
 .form-group-sm textarea.form-control,
 .form-group-sm select[multiple].form-control {
-  height: auto;
+    resize: none;
+    height: 250px;
+    width: 400px;
 }
 .form-group-sm .form-control-static {
   height: 30px;
@@ -2870,7 +2881,9 @@ select[multiple].input-lg {
 }
 .form-group-lg textarea.form-control,
 .form-group-lg select[multiple].form-control {
-  height: auto;
+    resize: none;
+    height: 250px;
+    width: 400px;
 }
 .form-group-lg .form-control-static {
   height: 46px;
@@ -3930,7 +3943,9 @@ textarea.input-group-lg > .input-group-btn > .btn,
 select[multiple].input-group-lg > .form-control,
 select[multiple].input-group-lg > .input-group-addon,
 select[multiple].input-group-lg > .input-group-btn > .btn {
-  height: auto;
+    resize: none;
+    height: 250px;
+    width: 400px;
 }
 .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
@@ -3953,7 +3968,9 @@ textarea.input-group-sm > .input-group-btn > .btn,
 select[multiple].input-group-sm > .form-control,
 select[multiple].input-group-sm > .input-group-addon,
 select[multiple].input-group-sm > .input-group-btn > .btn {
-  height: auto;
+    resize: none;
+    height: 250px;
+    width: 400px;
 }
 .input-group-addon,
 .input-group-btn,
