@@ -3,14 +3,15 @@
 <div class="container body-content">
     <div class="row sectionHeader">
         <div class="sectionHeading">
-            <span id="results">@Model.Forum.Name Forum</span>
+            <span id="results">@Model.Forum.Name Форум</span>
             @if (Context.User.Identity.IsAuthenticated)
             {
-                <span id="headingBtn"><a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Forum.Id" class="btn btn-newPost">Create Post</a></span>
+                <span id="headingBtn"><a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Forum.Id" class="btn btn-newPost">Създай публикация</a></span>
             }
+            <br />
             <form asp-controller="Forum" asp-action="Search" method="post">
                 <div class="searchForm">
-                    <input asp-for="SearchQuery" type="text" placeholder="Search..." class="searchBar" onfocus="clearThis(this)">
+                    <input asp-for="SearchQuery" type="text" placeholder="Търси ..." class="searchBar" onfocus="clearThis(this)">
                     <button type="submit" class="btn buttonSearch">
                         <i class="material-icons">search</i>
                     </button>
@@ -19,14 +20,13 @@
             </form>
         </div>
         <div class="sectionDescription">
-            <div class="forumLogo" style="background-image: url(@Model.Forum.ImageUrl); background-size:100%"></div>
-            <p>Welcome to the <strong>@Model.Forum.Name</strong> forum. Please keep posts friendly and on-topic.</p>
+            
             <p>
 
                 @if (!Context.User.Identity.IsAuthenticated)
                 {
-                    <span>You must be a <a asp-controller="Identity" asp-action="/Account/Register">Registered member</a> to create a new post.</span>
-                    <span>You have an account? <a asp-controller="Identity" asp-action="/Account/Login">Login</a></span>
+                    <span>Трябва да сте <a asp-controller="Identity" asp-action="/Account/Register">Регистриран потребител</a> за да добавите нова публикация.</span>
+                    <span>Имате акаунт? <a asp-controller="Identity" asp-action="/Account/Login">Вход</a></span>
                 }
             </p>
         </div>
@@ -40,6 +40,7 @@
                     {
                         <tr>
                             <td>
+                                <div class="forumLogo" style="background-image: url(@Model.Forum.ImageUrl); background-size:100%"></div>
                                 <div class="postData">
                                     <div class="postTitle">
                                         <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">@post.Title</a>
@@ -47,6 +48,7 @@
                                     <div class="forumSubTitle">
                                         <div>
                                             <span class="postAuthor">
+                                                Автор:
                                                 <a asp-controller="Profile" asp-action="Detail" asp-route-id="@post.AuthorId">
                                                     @post.AuthorName
                                                 </a>
@@ -61,7 +63,7 @@
                             </td>
                             <td>
                                 <div class="forumPostCount">
-                                    Replies: @post.RepliesCount
+                                    Отговори: @post.RepliesCount
                                 </div>
                             </td>
                             <td>
@@ -77,8 +79,8 @@
             <div class="noPosts">
                 <i class="material-icons md-72">question_answer</i>
                 <h3>
-                    It looks like there are no posts yet. <br />
-                    Why not <a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Forum.Id"><span>Create One?</span></a>
+                    Изглежда няма добавени публикации <br />
+                    Защо не <a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Forum.Id"><span>създадеш ти</span></a>?
                 </h3>
             </div>
         }

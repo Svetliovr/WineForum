@@ -7,13 +7,24 @@
 
             <form asp-controller="Search" asp-action="Search" method="post">
                 <div class="searchForm">
-                    <input asp-for="SearchQuery" type="text" placeholder="Search..." class="searchBar" onfocus="clearThis(this)">
+                    <input asp-for="SearchQuery" type="text" placeholder="Търси..." class="searchBar" onfocus="clearThis(this)">
                     <button type="submit" class="btn btn-forumSearch">
                         <i class="material-icons">search</i>
                     </button>
                 </div>
             </form>
         </div>
+    </div>
+    <div class="row empty">
+        @if (Model.EmptySearchResult || Model.SearchQuery==null)
+        {
+            <div class="noPosts">
+                <i class="material-icons md-72">question_answer</i>
+                <h3>
+                    Няма намерени резултати  <br />
+                </h3>
+            </div>
+        }
     </div>
     <div class="row forumResultContent">
         @if (!Model.EmptySearchResult)

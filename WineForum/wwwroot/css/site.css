@@ -193,7 +193,7 @@ padding-bottom: 15px
     color: black;
     font-family: 'Roboto mono';
     font-size: 0.8em;
-    font-weight:bold;
+    
 }la
 
 .postDate {
@@ -238,6 +238,9 @@ padding-bottom: 15px
     color: transparent;
     padding: 22px;
     border-left: 1px solid #ddd;
+}
+.postContent{
+    padding-top:15px;
 }
 
 .postAuthorRating {
@@ -303,7 +306,7 @@ padding-bottom: 15px
     background-color: #ad3a3a;
     transition: ease 0.3s;
 }
-button, input, optgroup, select, {
+button, input, optgroup, select {
     color: black;
     font: inherit;
     margin: 0;
@@ -390,7 +393,7 @@ textarea{
 }
 .form-control {
     display: inline-block;
-    width: 40%;
+    width: 65%;
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;
@@ -487,7 +490,6 @@ textarea{
 
 /*Create Post*/
 .createPostSection {
-    background-color: #fff;
     padding: 24px;
 }
 

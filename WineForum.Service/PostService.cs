@@ -62,22 +62,32 @@ namespace WineForum.Service
                .SingleOrDefault();
         }
 
+       
         public IEnumerable<Post> GetFilteredPosts(string searchQuery)
         {
-            var normalized = searchQuery.ToLower();
-            return GetAll().Where(post
-                => post.Title.ToLower().Contains(normalized)
-                || post.Content.ToLower().Contains(normalized));
+            
+           var query = searchQuery.ToLower();
+
+            return _context.Posts
+                .Include(post => post.Forum)
+                .Include(post => post.User)
+                .Include(post => post.Replies)
+                .Where(post => 
+                    post.Title.ToLower().Contains(query) 
+                 || post.Content.ToLower().Contains(query));
+            
         }
 
         public IEnumerable<Post> GetFilteredPosts(Forum forum, string searchQuery)
         {
-            return string.IsNullOrEmpty(searchQuery)
-           ? forum.Posts
-           : forum.Posts
-           .Where(post => post.Title.ToLower().Contains(searchQuery)
-               || post.Content.ToLower().Contains(searchQuery));
-        }
+            
+                return string.IsNullOrEmpty(searchQuery)
+               ? forum.Posts
+               : forum.Posts
+               .Where(post => post.Title.ToLower().Contains(searchQuery)
+                   || post.Content.ToLower().Contains(searchQuery));
+
+         }    
 
         public IEnumerable<Post> GetLatestPosts(int n)
         {

@@ -1,30 +1,29 @@
 ﻿@page
 @model LoginModel
 
-@{
-    ViewData["Title"] = "Log in";
-}
+
 
 <h2>@ViewData["Title"]</h2>
 <div class="row">
-    <div class="row sectionHeaderForum">
+    <div class="row sectionHeaderLogin">
         <div class="sectionHeading">
-            Log In
+            Вход
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="row loginForm">
         <section>
             <form method="post">
-                <h4>Use a local account to log in.</h4>
-                <hr />
+                
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="Input.UserName"></label>
+                    <label asp-for="Input.UserName">Потребител</label>
+                    <br/>
                     <input asp-for="Input.UserName" class="form-control" />
                     <span asp-validation-for="Input.UserName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Input.Password"></label>
+                    <label asp-for="Input.Password">Парола</label>
+                    <br/>
                     <input asp-for="Input.Password" class="form-control" />
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
@@ -32,19 +31,19 @@
                     <div class="checkbox">
                         <label asp-for="Input.RememberMe">
                             <input asp-for="Input.RememberMe" />
-                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        Запомни ме
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-default">Log in</button>
+                    <button type="submit" class="btn btn-default">Вход</button>
                 </div>
                 <div class="form-group-1">
                     <p>
-                        <a asp-page="./ForgotPassword">Forgot your password?</a>
+                        <a asp-page="./ForgotPassword">Забравена парола?</a>
                     </p>
                     <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Регистрация</a>
                     </p>
                 </div>
             </form>

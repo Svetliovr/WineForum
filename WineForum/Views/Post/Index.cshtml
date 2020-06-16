@@ -12,9 +12,11 @@
     
     <div class="row" id="postIndexContent">
         <div class="col-md-3 postAuthorContainer">
+            Автор:
             <a asp-controller="Profile" asp-action="Detail" asp-route-id="@Model.AuthorId">
                 @Model.AuthorName
             </a>
+            <span class="userRating">(@Model.AuthorRating)</span>
             <div class="postAuthorImage" style="background-image: url(@Model.AuthorImageUrl);"></div>
 
             <span class="postDate">@Model.Created</span>
@@ -24,12 +26,12 @@
                 <br />
             }
         </div>
-        <div class="col-md-9 postContentContainer">
-            <div class="postContent">
-                @Html.Raw(Model.PostContent)
+            <div class="col-md-9 postContentContainer">
+                <div class="postContent">
+                    @Html.Raw(Model.PostContent)
+                </div>
             </div>
-
-        </div>
+      
     </div>
 
     <div class="row" id="replyDivider"></div>
@@ -39,7 +41,7 @@
         <div class="row" id="postReplyRow">
             <span>
                 <a asp-controller="Reply" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-newReply">
-                    Отговори
+                    Отговор
                 </a>
             </span>
         </div>
@@ -52,9 +54,11 @@
         {
             <div class="row replyContent">
                 <div class="col-md-3 replyAuthorContainer">
+                    Автор:
                     <a asp-controller="Profile" asp-action="Detail" asp-route-id="@reply.AuthorId">
                         @reply.AuthorName
                     </a>
+                    <span class="userRating">(@reply.AuthorRating)</span>
                     <div class="postAuthorImage" style="background-image: url(@reply.AuthorImageUrl); background-size: 100%"></div>
 
                     @if (reply.IsAuthorAdmin)
@@ -63,6 +67,7 @@
                         <br />
                     }
                     <span class="postDate">@reply.Created</span>
+
                 </div>
                 <div class="col-md-9 replyContentContainer">
                     @Html.Raw(reply.ReplyContent)
@@ -72,11 +77,12 @@
     }
     else
     {
-        <div class="noPosts">
-            <h3>
-               Няма отговори на тази публикация.<br />
-            </h3>
-        </div>
+            <div class="noPosts">
+                <i class="material-icons md-72">question_answer</i>
+                <h3>
+                    Няма отговори на тази публикация.<br />
+                </h3>
+            </div>
     }
 
 </div>

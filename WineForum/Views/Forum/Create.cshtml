@@ -4,7 +4,7 @@
 <div class="container body-content">
     <div class="row sectionHeaderForum">
         <div class="sectionHeading">
-            Create New Forum
+            Създаване на форум
         </div>
     </div>
     <div class="row forumCreate">
@@ -12,28 +12,28 @@
                 <form asp-action="AddForum" method="post" id="createForumForm" enctype="multipart/form-data">
                     <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group">
-                        <label asp-for="Title">Forum Title</label>
+                        <label asp-for="Title">Заглавие</label>
                         <br />
                         <input asp-for="Title" class="form-control" placeholder="Choose forum title" />
                         <span asp-validation-for="Title" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Description">Forum Description</label>
+                        <label asp-for="Description">Описание на форум</label>
                         <br />
                         <input asp-for="Description" class="form-control" placeholder="Write a brief description" />
                         <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
                     <div id="upload">
-                        <label>Upload Forum Image</label>
+                        <label>Прикачване на снимка</label>
                         <br />
                         <label class="btn btn-default btn-file">
-                            Browse <input asp-for="ImageUpload" typeof="file" style="display: none">
+                            Търси <input asp-for="ImageUpload" typeof="file" style="display: none">
                         </label>
                     </div>
 
                     <div class="row" id="rowDivider"></div>
                     
-                        <button type="submit" id="newFormBtn" class="btn btn-submitPost">Create Forum</button>
+                        <button type="submit" id="newFormBtn" class="btn btn-submitPost">Създаване на форум</button>
                 
                 </form>
             </div>

@@ -2,14 +2,14 @@
 
 <div class="container body-content">
     <div class="row sectionHeader">
-        <div class="sectionHeading">Browse Forums</div>
+        <div class="sectionHeading">Форуми</div>
         <div class="sectionDescription">
-            <p>Welcome to <strong>WineTalk community</strong>.</p>
+            <p>Добре дошли в<strong> WineForum</strong>.</p>
             <p>
                 @if (!Context.User.Identity.IsAuthenticated)
                 {
-                    <span>You must be a <a asp-controller="Identity" asp-action="/Account/Register">Registered member</a> to create a new post.</span>
-                    <span>You have an account? <a asp-controller="Identity" asp-action="/Account/Login">Login</a></span>
+                    <span>Трябва да сте <a asp-controller="Identity" asp-action="/Account/Register">Регистриран потребител</a> за да добавите нова публикация.</span>
+                    <span>Имате акаунт? <a asp-controller="Identity" asp-action="/Account/Login">Вход</a></span>
                 }
             </p>
         </div>
@@ -26,25 +26,20 @@
                                 <div class="forumTitle">
                                     <a asp-controller="Forum" asp-action="Topic" asp-route-id="@forum.Id">@forum.Name</a>
                                 </div>
-                                <div class="forumSubTitle">
-                                    @if (forum.HasRecentPost)
-                                    {
-                                        <div class="hasRecentPost">Hot</div>
-                                    }
-                                </div>
+                                
                             </div>
                         </td>
                         <td>
                             <div class="forumPostCount">
-                                @forum.NumberOfPosts Posts
+                                Публикации: @forum.NumberOfPosts
                             </div>
                             <div class="forumMemberCount">
-                                @forum.NumberOfUsers Users
+                                Потребители: @forum.NumberOfUsers
                             </div>
                         </td>
                         <td>
                             <div class="forumDescription">
-                                @forum.Description
+                               @forum.Description
                             </div>
                         </td>
                     </tr>

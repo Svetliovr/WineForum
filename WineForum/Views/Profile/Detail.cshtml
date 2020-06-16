@@ -12,7 +12,7 @@
 <div class="container body-content">
     <div class="row sectionHeader">
         <div class="sectionHeading">
-            User Profile
+            Профил
         </div>
     
         <div class="row userProfile">
@@ -24,27 +24,27 @@
                         <label></label>
                         <div id="upload">
                             <label class="btn btn-default btn-file">
-                                Browse Image<input type="file" name="file" style="display:none" />
+                                Добави изображение<input type="file" name="file" style="display:none" />
                             </label>
                         </div>
                         <label></label>
                         <div id="submit">
 
-                            <button type="submit" id="btn-profile" class="btn btn-default">Submit</button>
+                            <button type="submit" id="btn-profile" class="btn btn-default">Прикачи</button>
 
                         </div>
                     </form>
                 }
             </div>
             <div class="col-md-8">
-                <span id="userName">Username: @Model.UserName</span>
+                <span id="userName">Потребителско име: @Model.UserName</span>
                 @if (@Model.IsAdmin)
                 {
                     <span class="isAdmin">Admin</span>
                 }
-                <span id="userRating">Current Rating: @Model.UserRating</span>
-                <span id="userEmailLabel">Email: @Model.Email</span>
-                <span id="userCreatedLabel">Member Since: @Model.MemberSince</span>
+                <span id="userRating">Рейтинг: @Model.UserRating</span>
+                <span id="userEmailLabel">Имейл: @Model.Email</span>
+                <span id="userCreatedLabel">Създаден на: @Model.MemberSince</span>
 
             </div>
            </div>

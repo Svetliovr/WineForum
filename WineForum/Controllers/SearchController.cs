@@ -14,6 +14,7 @@ namespace WineForum.Controllers
     public class SearchController : Controller
     {
         private readonly IPost _postService;
+        
 
         public SearchController(IPost postService)
         {
@@ -21,7 +22,7 @@ namespace WineForum.Controllers
         }
         public IActionResult Results(string searchQuery)
         {
-            var posts = _postService.GetFilteredPosts(searchQuery);
+            var posts = _postService.GetFilteredPosts(searchQuery).ToList();
 
             var areNoResults = (!string.IsNullOrEmpty(searchQuery) && !posts.Any());
 
@@ -42,8 +43,9 @@ namespace WineForum.Controllers
             {
                 Posts = postListings,
                 SearchQuery = searchQuery,
-                EmptySearchResult = areNoResults
+                EmptySearchResult = areNoResults,
             };
+            
 
             return View(model);
         }

@@ -7,10 +7,10 @@
             <p class="frontpageSubHeading"></p>
             <div>
                 <form asp-controller="Search" asp-action="Search" method="post">
-                    <input asp-for="SearchQuery" type="text" class="homeSearch" placeholder="Търси публикации.." />
-
-
+                    <input asp-for="SearchQuery" type="text" class="homeSearch" placeholder="Търси ..." onfocus="clearThis(this)" />
+                   
                 </form>
+                
             </div>
         </div>
         <div class="col-md-6"></div>
