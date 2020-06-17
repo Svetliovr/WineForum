@@ -1,4 +1,7 @@
-﻿@inject SignInManager<WineForum.Data.Models.ApplicationUser> SignInManager
+<head>
+    <meta charset="utf-8" />
+</head>
+@inject SignInManager<WineForum.Data.Models.ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

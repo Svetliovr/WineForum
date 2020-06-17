@@ -65,7 +65,10 @@ namespace WineForum.Service
        
         public IEnumerable<Post> GetFilteredPosts(string searchQuery)
         {
-            
+            if (searchQuery == null)
+            {
+                return GetAll();
+            }
             var normalized = searchQuery.ToLower();
             return GetAll()
                 .Where(post

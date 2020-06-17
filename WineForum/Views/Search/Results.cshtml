@@ -16,12 +16,14 @@
         </div>
     </div>
     <div class="row empty">
-        @if (Model.EmptySearchResult)
+       
+        @if (Model.SearchQuery==null)
         {
             <div class="noPosts">
                 <i class="material-icons md-72">question_answer</i>
                 <h3>
-                    Няма намерени резултати  <br />
+                    Няма намерени резултати за вашето търсене
+                    <br />
                 </h3>
             </div>
         }

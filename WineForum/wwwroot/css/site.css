@@ -31,7 +31,7 @@
 .navLogo {
     background-image: url("/images/theme/log1.png");
     background-size: 100%;
-    width: 150px;
+    width: 200px;
     padding-right: 16px;
     background-repeat: no-repeat;
     background-position: center;
@@ -450,8 +450,9 @@ textarea{
 
 .noPosts {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 15px;
     font-family: 'Roboto Mono';
+    padding-bottom: 15px;
 }
 
 /*User Profile*/
