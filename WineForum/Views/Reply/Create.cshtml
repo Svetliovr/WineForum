@@ -23,7 +23,8 @@
                 <div class="form-group">
 
                     <textarea asp-for="ReplyContent" rows="12"
-                          class="form-control" placeholder="Вашият отговор..." ></textarea>
+                          class="form-control"required placeholder="Отговор..." oninvalid="this.setCustomValidity('Въведете отговор')"
+    oninput="this.setCustomValidity('')" ></textarea>
                     <span asp-validation-for="ReplyContent" class="text-danger"></span>
                 </div>
                 <button type="submit" id="submitReplyBtn" class="btn btn-submitPost">Отговор</button>

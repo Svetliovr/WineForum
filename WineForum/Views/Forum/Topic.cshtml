@@ -3,7 +3,7 @@
 <div class="container body-content">
     <div class="row sectionHeader">
         <div class="sectionHeading">
-            <span id="results">@Model.Forum.Name Форум</span>
+            <span id="results">@Model.Forum.Name</span>
             @if (Context.User.Identity.IsAuthenticated)
             {
                 <span id="headingBtn"><a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Forum.Id" class="btn btn-newPost">Създай публикация</a></span>
@@ -55,7 +55,7 @@
                                             </span>
                                             (@post.AuthorRating)
                                             <span class="postDate">
-                                                @post.DatePosted
+                                               Създаден на: @post.DatePosted
                                             </span>
                                         </div>
                                     </div>
@@ -66,9 +66,7 @@
                                     Отговори: @post.RepliesCount
                                 </div>
                             </td>
-                            <td>
-                                <div class="postDate">@post.DatePosted</div>
-                            </td>
+                            
                         </tr>
                     }
                 </tbody>

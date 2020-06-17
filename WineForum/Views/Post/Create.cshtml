@@ -22,12 +22,14 @@
                     <div class="form-group">
                         <label asp-for="Title">Заглавие</label>
                         <br/>
-                        <input asp-for="Title" class="form-control" />
+                        <input asp-for="Title"required class="form-control"oninvalid="this.setCustomValidity('Моля добавете заглавие')"
+    oninput="this.setCustomValidity('')"  />
                         <span asp-validation-for="Title" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         
-                        <textarea asp-for="Content" rows="12" class="form-control" placeholder="Съдържание.."></textarea>
+                        <textarea asp-for="Content" rows="12" class="form-control"required placeholder="Съдържание.."oninvalid="this.setCustomValidity('Моля въведете съдържание')"
+    oninput="this.setCustomValidity('')" ></textarea>
                         <span asp-validation-for="Content" class="text-danger"></span>
                     </div>
                     <button type="submit" id="registerBtn" class="btn btn-submitPost">Публикувай</button>
