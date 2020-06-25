@@ -143,11 +143,12 @@
     font-size: 3.2em;
 }
 
-.frontPageSubHeading {
-    font-weight: bold;
+.frontpageSubHeading {
+    
     font-size: 2em;
-    color: white;
+    color: black;
     text-align: left;
+    font-family:'Roboto';
 }
 
 /* Front page content */
@@ -219,6 +220,7 @@ padding-bottom: 15px
     height: 80px;
     width: 80px;
     background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .postAuthorContainer {

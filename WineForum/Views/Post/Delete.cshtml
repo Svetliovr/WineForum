@@ -1,0 +1,21 @@
+﻿@model WineForum.Models.Post.DeletePostModel
+
+<div class="container body-content">
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="row sectionHeader">
+            <div class="sectionHeading">Изтриване на публикация</div>
+            <div class="sectionDescription">
+                <p>
+                   Сигурни ли сте ,че искате да изтриете публикацията?
+                </p>
+            </div>
+        </div>
+        <form asp-action="ConfirmDelete">
+            <div class="deletePost">
+                <button id="deleteButton" class="btn btn-lg btn-danger">Потвърди</button>
+                <button id="deleteButton" class="btn btn-lg btn-default">Отказ</button>
+            </div>
+        </form>
+    }
+</div>

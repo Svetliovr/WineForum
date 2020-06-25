@@ -42,8 +42,9 @@ namespace WineForum.Controllers
                 DatePosted = post.Created.ToString(),
                 RepliesCount = post.Replies.Count(),
                 Forum = GetForumListingForPost(post),
-                
-                });
+                ForumName = post.Forum.Title,
+                ForumId = post.Forum.Id
+            });
             return new HomeIndexModel
             {
                 LatestPosts = posts,

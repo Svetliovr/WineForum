@@ -5,13 +5,7 @@
         <div class="sectionHeading">Форуми</div>
         <div class="sectionDescription">
             <h3>Добре дошли в<strong> WineForum</strong>.</h3>
-            <p>
-                @if (!Context.User.Identity.IsAuthenticated)
-                {
-                    <span>Трябва да сте <a asp-controller="Identity" asp-action="/Account/Register">Регистриран потребител</a> за да добавите нова публикация.</span>
-                    <span>Имате акаунт? <a asp-controller="Identity" asp-action="/Account/Login">Вход</a></span>
-                }
-            </p>
+            
         </div>
     </div>
     <div class="row" id="forumIndexContent">

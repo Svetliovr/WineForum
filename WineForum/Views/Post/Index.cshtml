@@ -6,10 +6,12 @@
             <span class="postIndexTitle">
                 Публикации | @Model.Title
             </span>
+
             <span id="headingBtn"><a asp-controller="Forum" asp-action="Topic" asp-route-id="@Model.ForumId" class="btn btn-back">Обратно към @Model.ForumName</a></span>
+
         </div>
     </div>
-    
+
     <div class="row" id="postIndexContent">
         <div class="col-md-3 postAuthorContainer">
             Автор:
@@ -26,12 +28,12 @@
                 <br />
             }
         </div>
-            <div class="col-md-9 postContentContainer">
-                <div class="postContent">
-                    @Html.Raw(Model.PostContent)
-                </div>
+        <div class="col-md-9 postContentContainer">
+            <div class="postContent">
+                @Html.Raw(Model.PostContent)
             </div>
-      
+        </div>
+
     </div>
 
     <div class="row" id="replyDivider"></div>
@@ -44,9 +46,22 @@
                     Отговор
                 </a>
             </span>
+            @if (User.IsInRole("Admin"))
+            {
+
+                //  <span><a asp-controller="Post" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-deleteReply">Изтрий публикация</a></span>
+
+            }
         </div>
 
     }
+    
+     else
+        {
+            <span>Трябва да сте <a asp-controller="Identity" asp-action="/Account/Register">Регистриран потребител</a> за да добавите отговор в публикацията.</span>
+            <span>Имате акаунт? <a asp-controller="Identity" asp-action="/Account/Login">Вход</a></span>
+        }
+    
     <div class="row" id="replyDivider"></div>
     @if (Model.Replies.Any())
     {
@@ -77,12 +92,12 @@
     }
     else
     {
-            <div class="noPosts">
-                <i class="material-icons md-72">question_answer</i>
-                <h3>
-                    Няма отговори на тази публикация.<br />
-                </h3>
-            </div>
+        <div class="noPosts">
+            <i class="material-icons md-72">question_answer</i>
+            <h3>
+                Няма отговори на тази публикация.<br />
+            </h3>
+        </div>
     }
 
 </div>

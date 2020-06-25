@@ -4,13 +4,13 @@
     <div class="row frontPageSplash">
         <div class="col-md-6 frontPageLearn">
             <div class="frontPageHeading">Добре дошли в "WineForum"</div>
-            <p class="frontpageSubHeading"></p>
+            <p class="frontpageSubHeading">Заедно споделяме богатството на българското вино!</p>
             <div>
                 <form asp-controller="Search" asp-action="Search" method="post">
                     <input asp-for="SearchQuery" type="text" class="homeSearch" placeholder="Търси ..." onfocus="clearThis(this)" />
-                   
+
                 </form>
-                
+
             </div>
         </div>
         <div class="col-md-6"></div>
@@ -31,8 +31,9 @@
                         <div class="postSubTitle">
                             <span class="postUser">
                                 Създадена на:
-                            </span> <span class="postForum"><a asp-controller="Forum" asp-action="Topic" asp-route-id="@post.ForumId"></a>@post.ForumName</span> <span class="postDate">@post.DatePosted</span>
-
+                                <span class="postDate">@post.DatePosted</span>
+                            </span>
+                           <span class="postForum"><a asp-controller="Forum" asp-action="Topic" asp-route-id="@post.ForumId"></a>| Форум:<strong> @post.ForumName</strong></span>
                             @if (post.RepliesCount == 1)
                             {
                                 <span>| @post.RepliesCount Отговор</span>

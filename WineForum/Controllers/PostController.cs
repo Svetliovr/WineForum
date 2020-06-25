@@ -72,6 +72,7 @@ namespace WineForum.Controllers
             return View(model);
 
         }
+
         
         [HttpPost]
         public async Task<IActionResult> AddPost(NewPostModel model)
@@ -113,6 +114,27 @@ namespace WineForum.Controllers
                 ReplyContent = reply.Content,
                 
             });
+        }
+        public IActionResult Delete(int id)
+        {
+            var post = _postService.GetById(id);
+            var model = new DeletePostModel
+            {
+                PostId = post.Id,
+                PostAuthor = post.User.UserName,
+                PostContent = post.Content
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult ConfirmDelete(DeletePostModel model)
+        {
+            var post = _postService.GetById(model.PostId);
+            _postService.Delete(model.PostId);
+
+            return RedirectToAction("Index", "Forum", new { id = post.Forum.Id } );
         }
     }
 }

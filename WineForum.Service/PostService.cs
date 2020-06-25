@@ -32,9 +32,11 @@ namespace WineForum.Service
             await _context.SaveChangesAsync();
         }
 
-        public Task Delete(int id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            var post = GetById(id);
+            _context.Remove(post);
+            await _context.SaveChangesAsync();
         }
 
         public Task EditPostContent(int id, string newContent)
@@ -44,12 +46,12 @@ namespace WineForum.Service
 
         public IEnumerable<Post> GetAll()
         {
-            return _context.Posts
+            var posts = _context.Posts
+                .Include(post => post.Forum)
                 .Include(post => post.User)
                 .Include(post => post.Replies)
-                    .ThenInclude(reply => reply.User)
-                .Include(post => post.Forum);
-
+                .ThenInclude(reply => reply.User);
+            return posts;
         }
 
         public Post GetById(int id)
@@ -70,11 +72,14 @@ namespace WineForum.Service
                 return GetAll();
             }
             var normalized = searchQuery.ToLower();
-            return GetAll()
-                .Where(post
-                => post.Title.ToLower().Contains(normalized)
-                || post.Content.ToLower().Contains(normalized));
-            
+            return _context.Posts
+                .Include(post => post.Forum)
+                .Include(post => post.User)
+                .Include(post => post.Replies)
+                .Where(post =>
+                    post.Title.ToLower().Contains(normalized)
+                 || post.Content.ToLower().Contains(normalized));
+
         }
 
         public IEnumerable<Post> GetFilteredPosts(Forum forum, string searchQuery)
